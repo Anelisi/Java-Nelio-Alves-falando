@@ -5,20 +5,26 @@ public class Produto {
 
     public static void main(String[] args) {
         Produto p = new Produto();
-       p.adicionaProdutoEtoque();
-       p.retiraProdutoDoEstoque();
+        p.estoque();
+        System.out.println(p);
+        p.adicionaProdutoEtoque();
+        p.retiraProdutoDoEstoque();
         System.out.println(p);
     }
     private String nomeProduto;
     private double valorProduto, valorTotal;
-   private int quantidadeProduto = 10, quantidadeProdutoEntrada, retirada;
+    private int quantidadeProduto = 10, quantidadeProdutoEntrada, retirada;
 
-    public void adicionaProdutoEtoque(){
-        System.out.println("Qual produto está entrando? ");
+    public void estoque(){
+        System.out.println("Nome do produto? ");
         nomeProduto = sc.nextLine();
         System.out.println("Qual o valor deste produto? ");
         valorProduto = sc.nextDouble();
-        System.out.println("Qual a quantidade deste produto está entrando no estoque? ");
+        valorTotal = valorProduto * quantidadeProduto;
+    }
+
+    public void adicionaProdutoEtoque(){
+        System.out.println("\nQual a quantidade deste produto está entrando no estoque? ");
         quantidadeProdutoEntrada = sc.nextInt();
         quantidadeProduto += quantidadeProdutoEntrada;
         valorTotal = valorProduto * quantidadeProduto;
@@ -39,7 +45,7 @@ public class Produto {
     }
 
     public String toString() {
-    return nomeProduto + ", R$" + String.format("%.2f", valorProduto) + ", " + quantidadeProduto + " unidades,  e o valor total em estoque é de R$" + String.format("%.2f",valorTotal);
+        return nomeProduto + ", R$" + String.format("%.2f", valorProduto) + ", " + quantidadeProduto + " unidades, valor total em estoque é de R$" + String.format("%.2f",valorTotal);
     }
 
 }
