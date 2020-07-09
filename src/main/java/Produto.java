@@ -16,7 +16,7 @@ public class Produto {
     private int quantidadeProduto = 10, quantidadeProdutoEntrada, retirada;
 
     public void estoque(){
-        System.out.println("Nome do produto? ");
+        System.out.println("Nome do produto: ");
         nomeProduto = sc.nextLine();
         System.out.println("Qual o valor deste produto? ");
         valorProduto = sc.nextDouble();
