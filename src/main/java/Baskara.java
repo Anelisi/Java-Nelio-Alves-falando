@@ -26,8 +26,6 @@ public class Baskara {
 
         }
 
-
-
 sc.close();
 
     }

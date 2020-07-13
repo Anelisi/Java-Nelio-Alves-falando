@@ -18,15 +18,14 @@ public class ExerciciosJAVAestrutRepetiçao {
 
         System.out.println("Que altura você tem? ");
         float altura = sc.nextFloat();
-        System.out.println("Ótimo! " + altura + "m de altura está no padrão");
+        System.out.printf("Ótimo! %.2fm de altura está perfeito!", altura);
 
 
 
-        System.out.println("Me desculpe a indiscrição, mas qual é o seu peso? ");
+        System.out.println("\nDesculpe-me a indiscrição, mas qual é o seu peso? ");
         double peso = sc.nextDouble();
-        System.out.println("Você disse " + peso + "kg?! É! Temos que fazer uma dieta :( ");
 
-
+        System.out.println( peso / (altura*altura) > 27? "Você disse " + peso + "kg?! É! Temos que fazer uma dieta :( " : "Ótimo! Você está  em plenamente bem!");
 
         sc.close();
 

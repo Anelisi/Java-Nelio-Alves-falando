@@ -42,9 +42,5 @@ public class FuncoesMatematicasJAVA {
         System.out.println(x1);
         System.out.println(x2);
 
-
-
-
-
     }
 }

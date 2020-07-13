@@ -29,6 +29,7 @@ public class Lisarb {
         else {
             System.out.printf("Seu imposto de Renda é R$  %.2f%n", IR);
         }
+        System.out.printf("Salário Líquido: R$ %.2f " , (sal - IR));
 
         sc.close();
     }
