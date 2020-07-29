@@ -10,10 +10,12 @@ public class Main {
         a2.exibeDados();
         Aluno a3 = new Aluno("Marie", 8,14,17);
         a3.status();
-        a3.exibeDados();*/
+        a3.exibeDados();
 
         Funcionario f1 = new Funcionario("Anelisi", 6870.00, 920.00, 1.2);
         f1.salario();
-        f1.exibeDados();
+        f1.exibeDados();*/
+       Dolares d = new Dolares();
+       d.cambio();
     }
 }
