@@ -10,7 +10,7 @@ import java.util.Scanner;
 public class Main_Worker {
     public static void main(String[] args) throws ParseException {
         Scanner sc = new Scanner(System.in);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 
         System.out.println("========== Department Data ==========");
         System.out.println("Enter department's name: ");
