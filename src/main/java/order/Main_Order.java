@@ -35,7 +35,7 @@ public class Main_Order {
         for (int i = 0; i < n; i++){
             System.out.println("===== Enter #" + (1 + i) + " item data =====");
             Scanner scanner = new Scanner(System.in);
-            System.out.print("Nome do Produto: ");
+            System.out.print("Nome do EtiquetaProduto.Produto: ");
             String nomeProd = scanner.nextLine();
             System.out.print("Preço: R$ ");
             double preco = scanner.nextDouble();

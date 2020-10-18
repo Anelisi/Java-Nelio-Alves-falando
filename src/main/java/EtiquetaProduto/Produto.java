@@ -1,33 +1,25 @@
+package EtiquetaProduto;
+
+import java.text.NumberFormat;
 import java.util.Scanner;
 
 public class Produto {
     Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        Produto p = new Produto("Televisão", 900.00,10);
-        p.estoque();
-        System.out.println("----------------------------------------------------------------------------------------------");
-        System.out.println(p);
-        System.out.println("----------------------------------------------------------------------------------------------");
+    protected String nomeProduto;
+    protected double valorProduto, valorTotal;
+    protected int quantidadeProduto, quantidadeProdutoEntrada, retirada, id;
 
-        p.adicionaProdutoEtoque();
-        p.retiraProdutoDoEstoque();
-        System.out.println(p);
-        p.setNomeProduto("Computador");
-        p.setValorProduto(4800.00);
-        System.out.println("Update " + p.getNomeProduto());
-    }
-    private String nomeProduto;
-    private double valorProduto, valorTotal;
-    private int quantidadeProduto, quantidadeProdutoEntrada, retirada;
+    public Produto() {    }
 
-    public Produto(String nomeProduto, double valorProduto, int quantidadeProduto) {
+    public Produto(int id, String nomeProduto, double valorProduto, int quantidadeProduto) {
+        this.id = id;
         this.nomeProduto = nomeProduto;
         this.valorProduto = valorProduto;
         this.quantidadeProduto = quantidadeProduto;
     }
 
-    public void estoque(){
+    public void valorEstoque(){
         valorTotal = valorProduto * quantidadeProduto;
     }
 
@@ -37,7 +29,7 @@ public class Produto {
         quantidadeProduto += quantidadeProdutoEntrada;
         valorTotal = valorProduto * quantidadeProduto;
         System.out.println("----------------------------------------------------------------------------------------------");
-        System.out.printf("\nA quantidade de %s que entrou é:  %d \nQuantidade total em estoque:  %d \nValor unitário: %.2f \nO valor total deste produto em estoque: %.2f", nomeProduto,quantidadeProdutoEntrada, quantidadeProduto,valorProduto,valorTotal);
+        System.out.println("A quantidade de " + nomeProduto + " que entrou é:  " + quantidadeProdutoEntrada + "\nQuantidade total em estoque: " + quantidadeProduto + " \nValor unitário: " + NumberFormat.getCurrencyInstance().format(valorProduto) + " \nO valor total deste produto em estoque: " + NumberFormat.getCurrencyInstance().format(valorTotal));
         System.out.println("\n----------------------------------------------------------------------------------------------");
     }
 
@@ -48,12 +40,12 @@ public class Produto {
         quantidadeProduto += - retirada;
         valorTotal = valorProduto * quantidadeProduto;
         System.out.println("----------------------------------------------------------------------------------------------");
-        System.out.printf("\nA quantidade de %s que saiu é:  %d \nquantidade total em estoque:  %d \nvalor unitário: %.2f \nO valor total deste produto em estoque: %.2f", nomeProduto,retirada, quantidadeProduto,valorProduto,valorTotal);
+        System.out.printf("A quantidade de " + nomeProduto + " que saiu é:  " + retirada + "\nQuantidade total em estoque: " + quantidadeProduto + " \nValor unitário: " + NumberFormat.getCurrencyInstance().format(valorProduto) + " \nO valor total deste produto em estoque: " + NumberFormat.getCurrencyInstance().format(valorTotal));
         System.out.println("\n----------------------------------------------------------------------------------------------");
     }
 
     public String toString() {
-        return nomeProduto + ", R$" + String.format("%.2f", valorProduto) + " - " + quantidadeProduto + " unidades, valor total em estoque é de R$" + String.format("%.2f",valorTotal);
+        return "Produto= " + nomeProduto + ",\nValor= " + NumberFormat.getCurrencyInstance().format(valorProduto) + "\nQuantidade = " + quantidadeProduto + "\nValor total em estoque: " + NumberFormat.getCurrencyInstance().format(valorTotal);
     }
 
     public String getNomeProduto() {
@@ -87,4 +79,6 @@ public class Produto {
     public int getRetirada() {
         return retirada;
     }
+
+
 }
