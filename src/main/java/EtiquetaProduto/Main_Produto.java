@@ -19,7 +19,7 @@ public class Main_Produto {
         List<Produto> produtos = new ArrayList<>();
         Scanner sc = new Scanner(System.in);
         int op = 0, id;
-        Produto p = null, importado = null, usado = null;
+        Produto p, importado, usado;
 
         do {
             System.out.println("============= MENU DE OPÇÕES =============");
@@ -52,7 +52,6 @@ public class Main_Produto {
                                 produtos.add(p);
                                 p.valorEstoque();
                                 System.out.println("ID = " + p.getId());
-                                //id++;
                                 break;
 
                             case 'I':
@@ -62,7 +61,6 @@ public class Main_Produto {
                                 produtos.add(importado);
                                 importado.valorEstoque();
                                 System.out.println("ID = " + importado.getId());
-                                //id++;
                                 break;
                             case 'U':
                                 System.out.print("Insira a data de fabricação: (dd/MM/aaaa)");
@@ -71,31 +69,9 @@ public class Main_Produto {
                                 produtos.add(usado);
                                 usado.valorEstoque();
                                 System.out.println("ID = " + usado.getId());
-                               // id++;
                                 break;
                         }
-//                        if (ch == 'C') {
-//                            p = new Produto(id, nomeProduto, valorProduto, quantidadeProduto);
-//                            produtos.add(p);
-//                            p.valorEstoque();
-//                            System.out.println("ID = " + p.getId());
-//                        } else if (ch == 'I') {
-//                            System.out.print("Valor taxa de câmbio: R$ ");
-//                            double taxaCambio = sc.nextDouble();
-//                            importado = new ProdutoImportado(id, nomeProduto, valorProduto, quantidadeProduto, taxaCambio);
-//                            produtos.add(importado);
-//                            importado.valorEstoque();
-//                            System.out.println("ID = " + importado.getId());
-//                        } else {
-//                            System.out.print("Insira a data de fabricação: (dd/MM/aaaa)");
-//                            Date datafabr = sdf.parse(sc.next());
-//                            usado = new ProdutoUsado(id, nomeProduto, valorProduto, quantidadeProduto, datafabr);
-//                            produtos.add(usado);
-//                            usado.valorEstoque();
-//                            System.out.println("ID = " + usado.getId());
-//                        }
-                   } //id++;
-
+                   }
                     break;
 
                 case 2:
