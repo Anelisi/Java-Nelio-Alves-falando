@@ -1,21 +1,24 @@
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-       /* Aluno a1 = new Aluno("Anelisi", 30,35,35);
-        a1.status();
-        a1.exibeDados();
-        Aluno a2 = new Aluno("Tutui",15,17,35);
-        a2.status();
-        a2.exibeDados();
-        Aluno a3 = new Aluno("Marie", 8,14,17);
-        a3.status();
-        a3.exibeDados();
+       File file = new File("C:\\teste\\AniDev.txt");
+       Scanner sc = null;
+       try {
+           sc = new Scanner(file);
+           while (sc.hasNextLine()) {
+               System.out.println(sc.nextLine());
+           }
 
-        Funcionario f1 = new Funcionario("Anelisi", 6870.00, 920.00, 1.2);
-        f1.salario();
-        f1.exibeDados();*/
-       Dolares d = new Dolares();
-       d.cambio();
+       } catch (FileNotFoundException e) {
+           System.out.println("Erro ao abrir o arquivo " + e.getMessage());
+       } finally {
+           if (sc != null) {
+               sc.close();
+           }
+           System.out.println("Código finalizado com sucesso!");
+       }
     }
 }
