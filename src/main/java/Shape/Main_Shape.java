@@ -9,13 +9,13 @@ import java.util.Scanner;
 public class Main_Shape {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<Shape> list = new ArrayList<>();
+        List<AbstractShape> list = new ArrayList<>();
 
-        System.out.println("Enter the number of shape: ");
+        System.out.print("Enter the number of shape: ");
         int n = sc.nextInt();
 
         for (int i = 1; i <= n; i ++){
-            System.out.println("==== Shape #" + i + " data: ====");
+            System.out.println("\n==== Shape #" + i + " data: ====");
             System.out.print("Rectangle or Circle? (r/c) ");
             char ch = sc.next().charAt(0);
             System.out.print("Color: (BLUE / RED / ORANGE / YELLOW / GREEN) ");
@@ -28,13 +28,13 @@ public class Main_Shape {
                 double heigth = sc.nextDouble();
                 list.add(new Rectangle(color,width,heigth));
             } else {
-                System.out.print("Radius");
+                System.out.print("Radius: ");
                 double radius = sc.nextDouble();
                 list.add(new Circle(color,radius));
             }
         }
         System.out.println("SHAPE AREAS: ");
-        for (Shape shape:list) {
+        for (AbstractShape shape:list) {
             System.out.println(String.format("%.2f",shape.area()));
 
         }

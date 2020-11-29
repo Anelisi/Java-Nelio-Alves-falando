@@ -2,7 +2,7 @@ package Shape;
 
 import Shape.enums.Color;
 
-public class Rectangle extends Shape {
+public class Rectangle extends AbstractShape {
     private double width;
     private double height;
 
