@@ -3,7 +3,7 @@ package Generics;
 import java.util.List;
 
 public class CalculationService {
-    public static <T extends Comparable<T>> T max(List<T> list) {
+    public static <T extends Comparable<?super T>> T max(List<T> list) {
         if (list.isEmpty()){
             throw  new IllegalStateException("List can't be empyt");
         }
