@@ -11,7 +11,6 @@ public class Main_Coringas {
         List<Object> myObj = new ArrayList<>();
 
         copy(myInts, myObj);
-
         print(myObj);
         copy(myDoubles, myObj);
         print(myObj);
